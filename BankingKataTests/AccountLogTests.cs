@@ -19,5 +19,17 @@ namespace BankingKataTests
 
             mock.DidNotReceiveWithAnyArgs().RecordDeposit(null);
         }
+
+        [Test]
+        public void LogHasOneRecordAfterOneDeposit()
+        {
+            var accountLog = new AccountLog();
+            accountLog.RecordDeposit(new Money(50));
+
+            var mock = Substitute.For<IAccountLog>();
+            accountLog.CopyTo(mock);
+
+            mock.Received(1).RecordDeposit(new Money(50));
+        }
     }
 }
