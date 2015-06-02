@@ -18,7 +18,8 @@ namespace BankingKataTests
             var account = new Account(log);
             account.Deposit(new Money(50));
 
-            log.Received().RecordDeposit(new Money(50));
+            var comedyVariable = log.Received();
+            comedyVariable.RecordDeposit(new Money(50));
         }
     }
 }
