@@ -15,7 +15,7 @@ namespace BankingKata
 
         public void Withdraw(Money money)
         {
-            throw new System.NotImplementedException();
+            log.RecordWithdrawal(money);
         }
     }
 }
