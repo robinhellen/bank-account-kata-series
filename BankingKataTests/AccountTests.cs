@@ -15,9 +15,7 @@ namespace BankingKataTests
         public void DepositingCashIntoAccountRecordsCashDeposit()
         {
             var log = Substitute.For<IAccountLog>();
-            var account = new Account();
-
-
+            var account = new Account(log);
             account.Deposit(new Money(50));
 
             log.Received().RecordDeposit(new Money(50));

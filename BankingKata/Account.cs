@@ -1,16 +1,16 @@
 namespace BankingKata
 {
     public class Account {
+        private readonly IAccountLog log;
+
+        public Account(IAccountLog log)
+        {
+            this.log = log;
+        }
+
         public void Deposit(Money money)
         {
-            throw new System.NotImplementedException();
-        }
-    }
-
-    public class Money {
-        public Money(int amount)
-        {
-            throw new System.NotImplementedException();
+            log.RecordDeposit(money);
         }
     }
 }
