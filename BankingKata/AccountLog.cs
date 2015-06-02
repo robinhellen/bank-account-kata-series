@@ -14,7 +14,7 @@ namespace BankingKata
 
         public void CopyTo(IAccountLog mock)
         {
-            throw new NotImplementedException();
+
         }
     }
 }
