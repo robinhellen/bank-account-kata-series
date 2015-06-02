@@ -21,5 +21,16 @@ namespace BankingKataTests
             var comedyVariable = log.Received();
             comedyVariable.RecordDeposit(new Money(50));
         }
+
+        [Test]
+        public void WithdrawingCashFromAccountRecordsCashWithdrawal()
+        {
+            var log = Substitute.For<IAccountLog>();
+            var account = new Account(log);
+            account.Withdraw(new Money(50));
+
+            var comedyVariable = log.Received();
+            comedyVariable.RecordWithdrawal(new Money(50));
+        }
     }
 }

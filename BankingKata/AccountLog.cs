@@ -12,6 +12,11 @@ namespace BankingKata
             log.Add(amount);
         }
 
+        public void RecordWithdrawal(Money money)
+        {
+            throw new NotImplementedException();
+        }
+
         public void CopyTo(IAccountLog other)
         {
             foreach(var money in log)

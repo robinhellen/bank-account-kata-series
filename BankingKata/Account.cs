@@ -12,5 +12,10 @@ namespace BankingKata
         {
             log.RecordDeposit(money);
         }
+
+        public void Withdraw(Money money)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
