@@ -12,9 +12,12 @@ namespace BankingKata
             log.Add(amount);
         }
 
-        public void CopyTo(IAccountLog mock)
+        public void CopyTo(IAccountLog other)
         {
-
+            foreach(var money in log)
+            {
+                other.RecordDeposit(money);
+            }
         }
     }
 }
